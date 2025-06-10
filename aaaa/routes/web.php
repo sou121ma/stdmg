@@ -17,18 +17,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// Route::get('stdmg/', function () {
-//     return view('welcome', [
-//         'students' => Student::all(),
-//         'teachers' => Teacher::all(),
-//         'courses' => Course::all(),
-//         'test' => Flight::find(15)
-//     ]);
-// });
-
-// Route::get('stdmg', [HomeController::class, 'index']);
-
-Route::resource('/', HomeController::class);
+Route::get('/', function () {
+    return view('welcome', [
+        'students' => Student::all(),
+        'teachers' => Teacher::all(),
+        'courses' => Course::all(),
+        'test' => Flight::find(15)
+    ]);
+});
 
 
 Route::resource('students', StudentController::class);
